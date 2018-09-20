@@ -5,25 +5,22 @@
   <meta charset="utf-8">
   <title>LOGIN</title>
   <link rel="stylesheet" type="text/css" href="css/loginpage.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js">
-  </script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-  </script>
 </head>
 
 <body>
-  <form action="login.php" method="post">
+  <h2 align="center"> WELCOME TO MNNIT ATTENDANCE MANAGER </h2>
     <div class="logincontainer">
-      <input class="ipbox" type="text" placeholder="Registration Number" name="regno" required>
-      <br>
-      <input class="ipbox" type="password" placeholder="Password" name="psword" required>
-      <br>
-      <button class="loginbtn" type="submit"><span>LOGIN</span></button>
+      <form action="login.php" method="post">
+          <input class="ipbox" type="text" placeholder="Registration Number" name="regno" required>
+          <br>
+          <input class="ipbox" type="password" placeholder="Password" name="psword" required>
+          <br>
+          <button class="loginbtn" type="submit"><span>LOGIN</span></button>
+      </form>
+      <form action="signup.html" method="post">
+          <button class="signupbtn" type="submit" title="If you are new"><span>SIGN UP</span></button>
+      </form>
     </div>
-  </form>
-  <form action="signup.html" method="post">
-    <button class="signupbtn" type="submit">SIGN UP</button>
-  </form>
 </body>
 
 </html>
