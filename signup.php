@@ -6,12 +6,27 @@
   $email = $_POST['email'];
   $reg_no = $_POST['regno'];
   $password = $_POST['pword'];
+  $dept = $_POST['branch'];
+  $sem = $_POST['sem'];
+  $grp = $_POST['grp'];
+  $subgrp = $_POST['subgrp'];
 
-  $query = "INSERT INTO login (regno,password,first_name,last_name,email) VALUES ($reg_no,'$password','$first_name','$last_name','$email');";
-  if(mysqli_query($conn,$query)){
-    echo "RECORDS UPDATED";
+  $query1 = "INSERT INTO login VALUES($reg_no,'$password',1,'$email');";
+  $query2 = "INSERT INTO student VALUES($reg_no,'$first_name','$last_name','$dept','$grp','$subgrp','$sem');";
+
+  if(mysqli_query($conn,$query1)) {
+    if(mysqli_query($conn,$query2)) {
+      header('Location: loginpage.html');
+      exit;
+    }
+    else {
+      echo "Error: " . $query . "<br>" . mysqli_error($conn);
+      echo "Error connecting to database";
+    }
   }
-  else{
+  else {
     echo "Error: " . $query . "<br>" . mysqli_error($conn);
+    echo "Error connecting to database";
   }
+  mysqli_close($conn);
 ?>

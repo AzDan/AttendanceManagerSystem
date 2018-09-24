@@ -6,7 +6,7 @@
       $res;
       $data=array();
 
-      $query = "SELECT regno,password FROM login WHERE regno=$regno AND password='$pass';";
+      $query = "SELECT username,password FROM login WHERE username=$regno AND password='$pass';";
       if ($res=mysqli_query($conn, $query)) {
         foreach ($res as $row) {
           $data[]=$row;
@@ -21,7 +21,7 @@
         exit;
       }
       else{
-        if ($data[0]['regno']==$regno && $data[0]['password']==$pass) {
+        if ($data[0]['username']==$regno && $data[0]['password']==$pass) {
           header('Location: studenthome.html');
           exit;
         }
